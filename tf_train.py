@@ -68,12 +68,17 @@ model.add(Dense(units=5, activation="softmax"))
 model.compile(optimizer='rmsprop', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 # Trains the values
-model.fit(training_images, training_labels, epochs=10, batch_size=32, shuffle=True)
+model.fit(training_images, training_labels, epochs=20, batch_size=32, shuffle=True)
 
 # Evaluates the testing samples
 test_loss, test_acc = model.evaluate(testing_images, testing_labels, verbose=0)
 
 print("Test accuracy:", test_acc)
+
+predictions = model.predict(testing_images)
+print(predictions[0])
+print(np.argmax(predictions[0]))
+
 
 # Serializes the model to json format
 # model_json = model.to_json()
