@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import os
 
+
 # Parser that takes the name/location of an image file to be classified by the model
 parser = argparse.ArgumentParser(description="Process the name and location of an image")
 parser.add_argument('image_name', type=str)
@@ -18,7 +19,7 @@ model = load_model(os.getcwd() + "\\Trained_Model\\model.h5")
 
 # Constructs a numpy array around the provided image
 imgs = []
-img = cv2.imread(os.getcwd() + "\\" + arg.image_name, 0)
+img = cv2.imread(os.getcwd() + "\\" + arg.image_name)
 img = cv2.resize(img, (64,64))
 imgs.append(img)
 
