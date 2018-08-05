@@ -14,7 +14,7 @@ print(arg.image_name)
 class_names = ['drawings', 'engraving', 'iconography', 'painting', 'sculpture']
 
 # A model reconstructed based on the previous model
-model = load_model(os.getcwd() + "\Trained_Model\model.h5")
+model = load_model(os.getcwd() + "\\Trained_Model\\model.h5")
 
 # Constructs a numpy array around the provided image
 imgs = []
