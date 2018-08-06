@@ -74,7 +74,6 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(cp_path, save_weights_only=True
 model = Sequential()
 
 # Adding layers to the model
-#model.add(Flatten(input_shape=(64,64)))
 model.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), padding='same', activation='relu', kernel_constraint=maxnorm(3)))
 model.add(Dropout(0.2))
 model.add(Conv2D(32, (3, 3), activation='relu', padding='same', kernel_constraint=maxnorm(3)))
