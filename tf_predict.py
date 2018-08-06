@@ -1,4 +1,5 @@
 from keras.models import load_model
+from sklearn.metrics import confusion_matrix
 import argparse
 import cv2
 import numpy as np
@@ -46,3 +47,9 @@ test_loss, test_acc = model.evaluate(testing_images, testing_labels, verbose=0)
 
 print("Test accuracy:", test_acc)
 print("Test loss:", test_loss)
+
+predictions = model.predict(testing_images)
+
+# View Confusion Matrix
+cm = confusion_matrix(testing_labels, np.argmax(predictions, axis=1))
+print(cm)
